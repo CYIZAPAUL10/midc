@@ -1,0 +1,126 @@
+/* Maisha — shared styles. Palette contrast checked against WCAG 2.2 AA. */
+@font-face{font-family:"Bebas Neue";src:url(vendor/fonts/bebas-neue-latin-400-normal.woff2) format("woff2");font-display:swap}
+@font-face{font-family:"DM Sans";font-weight:400;src:url(vendor/fonts/dm-sans-latin-400-normal.woff2) format("woff2");font-display:swap}
+@font-face{font-family:"DM Sans";font-weight:500;src:url(vendor/fonts/dm-sans-latin-500-normal.woff2) format("woff2");font-display:swap}
+@font-face{font-family:"DM Sans";font-weight:700;src:url(vendor/fonts/dm-sans-latin-700-normal.woff2) format("woff2");font-display:swap}
+:root{--forest:#0f2e1d;--paper:#f5f2e7;--sand:#e9e5d8;--ink:#111a14;--soft:#3d4a42;--green:#1d7a49;--mint:#7fd6a4;--gold:#f0c96b;--r:20px}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:6rem}
+body{font:400 1.0625rem/1.65 "DM Sans",system-ui,sans-serif;background:var(--forest);color:var(--ink);padding:1.5rem}
+h1,h2,h3{font-family:"Bebas Neue",Impact,sans-serif;font-weight:400;line-height:.98;letter-spacing:.01em;text-transform:uppercase}
+h1{font-size:clamp(3.2rem,7vw,5.6rem)}h2{font-size:clamp(2.4rem,4.5vw,3.6rem)}h3{font-size:1.7rem}
+p{max-width:62ch;color:var(--soft)}a{color:inherit}
+.fa-solid,.fa-regular{flex:none}
+.shell{max-width:1240px;margin:0 auto;background:var(--paper);border-radius:14px;overflow:clip}
+.wrap{padding:clamp(3.5rem,8vw,6.5rem) clamp(1.25rem,5vw,3.5rem)}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+.skip{position:absolute;left:1rem;top:-5rem;z-index:300;background:var(--ink);color:#fff;padding:.8rem 1.2rem;border-radius:10px}
+.skip:focus{top:1rem}
+:focus-visible{outline:3px solid var(--ink);outline-offset:3px;border-radius:6px}
+.on-dark :focus-visible,.dark :focus-visible{outline-color:#fff}
+/* header */
+header{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1rem clamp(1.25rem,5vw,3.5rem);position:relative}
+.logo img{width:64px;height:auto;display:block}
+.nav{display:flex;align-items:center;gap:.5rem;list-style:none}
+.nav a{display:inline-flex;align-items:center;min-height:44px;padding:0 .9rem;text-decoration:none;font-weight:500;border-radius:100px}
+.nav a:hover{text-decoration:underline;text-underline-offset:5px}
+.nav a[aria-current=page]{box-shadow:inset 0 -3px var(--green);border-radius:0}
+.menu-btn{display:none;align-items:center;gap:.6rem;min-height:48px;padding:0 1.1rem;border:2px solid var(--ink);background:none;color:var(--ink);border-radius:100px;font:700 1rem "DM Sans",sans-serif;cursor:pointer}
+.menu-btn:hover{background:var(--ink);color:#fff}
+.scrim{display:none}
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:.6rem;min-height:48px;padding:.6rem 1.5rem;border-radius:100px;font-weight:700;text-decoration:none;border:2px solid var(--green);background:var(--green);color:#fff}
+.btn:hover{background:var(--forest);border-color:var(--forest)}
+.btn.ghost{background:transparent;color:var(--ink);border-color:var(--ink)}
+.btn.ghost:hover{background:var(--ink);color:#fff}
+.btn.light{background:var(--paper);border-color:var(--paper);color:var(--ink)}
+.btn.light:hover{background:#fff}
+.dot{display:inline-grid;place-items:center;width:48px;height:48px;border-radius:50%;background:var(--green);color:#fff;text-decoration:none}
+/* hero */
+.hero{display:grid;grid-template-columns:1.15fr 1fr;gap:3rem;align-items:center;background:var(--sand);padding:clamp(2.5rem,6vw,5rem) clamp(1.25rem,5vw,3.5rem)}
+.hero p{margin:1.4rem 0 2rem;font-size:1.15rem}
+.row{display:flex;flex-wrap:wrap;gap:1rem}
+.panel{border-radius:var(--r);padding:1.75rem}
+.panel.dark{background:var(--forest);color:#fff}
+.panel.dark p{color:#d9e6dc}
+.group4{display:grid;grid-template-columns:1fr 1fr;gap:.9rem;list-style:none;margin-top:1rem}
+.group4 li{display:flex;flex-direction:column;gap:.5rem;align-items:flex-start;background:rgba(255,255,255,.08);border-radius:14px;padding:1rem;font-weight:500}
+.group4 i{font-size:1.8rem;color:var(--mint)}
+.bubble{margin-top:1rem;background:#fff;border-radius:var(--r);padding:1.4rem;display:flex;gap:1rem;align-items:center}
+.bubble i{font-size:1.6rem;color:var(--green)}.bubble p{color:var(--ink);font-weight:500;margin:0}
+/* sections */
+.head{display:flex;justify-content:space-between;align-items:end;gap:2rem;flex-wrap:wrap;margin-bottom:2.5rem}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:center}
+.stats{display:flex;gap:2rem;margin-top:2.5rem;list-style:none;flex-wrap:wrap}
+.stats li{padding-right:2rem;border-right:1px solid #b9b6a8}.stats li:last-child{border:0}
+.stats b{display:block;font:400 3.2rem/1 "Bebas Neue",sans-serif}
+.grid{display:grid;gap:1.25rem}.g3{grid-template-columns:repeat(3,1fr)}.g4{grid-template-columns:repeat(4,1fr)}.g2{grid-template-columns:repeat(2,1fr)}
+.card{background:var(--sand);border-radius:var(--r);padding:1.6rem;display:flex;flex-direction:column;gap:.8rem}
+.card .ic{font-size:2rem;color:var(--green)}
+.card .dot{margin-top:auto;align-self:flex-start}
+.card p{font-size:.98rem}
+.card small{font-weight:700;color:var(--soft)}
+.tag{align-self:flex-start;background:var(--paper);border-radius:100px;padding:.15rem .8rem;font-size:.85rem;font-weight:500}
+.band{background:var(--forest);color:#fff;border-radius:var(--r);margin:0 clamp(1.25rem,5vw,3.5rem)}
+.band blockquote{font:400 clamp(1.8rem,3.6vw,2.8rem)/1.15 "Bebas Neue",sans-serif;letter-spacing:.02em;max-width:26ch}
+.band cite{display:block;margin-top:1.2rem;color:#d9e6dc;font-style:normal}
+.green{background:var(--green);color:#fff}.green p{color:#fff}
+.green .card{background:var(--sand);color:var(--ink)}.green .card p{color:var(--soft)}
+.tile{border-radius:var(--r);background:var(--forest);display:grid;place-items:center;min-height:220px;font-size:4.5rem;color:var(--mint)}
+.num{font:400 1.4rem "Bebas Neue",sans-serif;color:var(--green)}
+details{background:var(--sand);border-radius:16px;padding:0 1.4rem}
+details+details{margin-top:.8rem}
+summary{min-height:56px;display:flex;align-items:center;justify-content:space-between;gap:1rem;cursor:pointer;font-weight:700;list-style:none}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:1.6rem}details[open] summary::after{content:"\2212"}
+details p{padding-bottom:1.2rem}
+.cta{text-align:center;display:grid;justify-items:center;gap:1.2rem}
+.cta h2{font-size:clamp(3rem,8vw,6.5rem)}.cta p{color:#fff}
+.person .avatar{width:96px;height:96px;border-radius:50%;background:var(--forest);color:var(--mint);display:grid;place-items:center;font-size:2.2rem}
+
+
+.media{padding:0;overflow:hidden}
+.media>img{width:100%;height:auto;display:block;background:var(--sand)}
+.media .body{padding:1.4rem 1.6rem 1.7rem;display:flex;flex-direction:column;gap:.8rem}
+.person>img{aspect-ratio:4/4.2;object-fit:cover}
+/* footer */
+.site-footer{background:#000;color:#fff;padding:clamp(3rem,7vw,5rem) clamp(1.25rem,5vw,3.5rem) 1.5rem}
+.site-footer p{color:#d9e6dc;font-size:.95rem}
+.site-footer ul{list-style:none;display:flex;flex-direction:column;gap:.1rem}
+.site-footer a{display:inline-flex;align-items:center;gap:.6rem;min-height:44px;text-decoration:none}
+.site-footer a:hover{text-decoration:underline;text-underline-offset:4px}
+.foot-top{display:flex;flex-wrap:wrap;gap:1.5rem 3rem;justify-content:space-between;align-items:center;padding-bottom:3rem;border-bottom:1px solid rgba(255,255,255,.25)}
+.foot-top h2{font-size:clamp(2.6rem,6vw,4.6rem);max-width:20ch}
+.foot-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1.2fr;gap:2.5rem;padding:3rem 0}
+.foot-brand img{width:72px;height:auto;display:block;margin-bottom:1rem}
+.foot-brand p{max-width:34ch}
+.site-footer h3{font-size:1.5rem;color:var(--gold);margin-bottom:.6rem}
+.site-footer .social{flex-direction:row;gap:.6rem;margin-top:1.2rem}
+.site-footer .social a{width:44px;height:44px;justify-content:center;border:2px solid #fff;border-radius:50%;font-size:1.05rem}
+.site-footer .social a:hover{background:#fff;color:var(--forest);text-decoration:none}
+.foot-bottom{display:flex;flex-wrap:wrap;gap:.5rem 2rem;justify-content:space-between;align-items:center;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.25)}
+.foot-bottom p{font-size:.85rem}
+@media (max-width:900px){.foot-grid{grid-template-columns:1fr 1fr}.foot-brand{grid-column:1/-1}}
+@media (max-width:520px){.foot-grid{grid-template-columns:1fr}}
+
+@media (max-width:900px){
+ header{position:sticky;top:0;z-index:100;background:var(--paper);padding:.7rem 1.25rem;border-bottom:1px solid #d3cfbf}
+ .logo img{width:52px}
+ .menu-btn{display:inline-flex}
+ .scrim{position:fixed;inset:0;z-index:90;background:rgba(0,0,0,.55);display:block;opacity:0;visibility:hidden;transition:opacity .25s,visibility .25s}
+ .scrim.open{opacity:1;visibility:visible}
+ html.menu-open{overflow:hidden}
+ .nav{display:none;position:absolute;left:0;right:0;top:100%;flex-direction:column;align-items:stretch;gap:0;background:var(--paper);padding:.5rem 1.25rem 1.5rem;border-radius:0 0 24px 24px;box-shadow:0 24px 40px rgba(0,0,0,.25);max-height:calc(100vh - 80px);overflow-y:auto}
+ .nav.open{display:flex}
+ .nav li{border-bottom:1px solid #cfcbbb}
+ .nav li:last-child{border:0;padding-top:1.25rem}
+ .nav a:not(.btn){display:flex;justify-content:space-between;align-items:center;min-height:64px;padding:0;border-radius:0;font:400 2.1rem/1 "Bebas Neue",sans-serif;letter-spacing:.02em;text-transform:uppercase;text-decoration:none}
+ .nav a:not(.btn)::after{content:"\f061"/"";font-family:"Font Awesome 7 Free";font-weight:900;font-size:.9rem;display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:var(--green);color:#fff}
+ .nav a[aria-current=page]{box-shadow:none;color:var(--green)}
+ .nav .btn{width:100%;justify-content:center;min-height:56px;font-size:1.05rem}
+ body{padding:0}.shell{border-radius:0}
+ .hero,.about,.g3,.g4,.g2{grid-template-columns:1fr}
+ .stats li{border:0;padding:0}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+@media (forced-colors:active){.btn,.dot{border:2px solid ButtonText}}
